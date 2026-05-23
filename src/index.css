@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+.bebas-neue {
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.google-sans-flex {
+  font-family: "Google Sans Flex", sans-serif;
+}
+
+.arial {
+  font-family: "Arial", sans-serif;
+}
+
+.work-gradient{
+  background:
+    linear-gradient(
+      180deg,
+      #120e07 0%,
+      rgba(2, 2, 8) 20%,
+      rgb(10, 10, 27) 25%,
+      rgb(10, 10, 27) 35%,
+      rgb(7, 21, 28) 45%,
+      rgb(7, 21, 28) 58%,
+      rgb(30, 26, 16) 65%,
+      rgb(30, 26, 16) 75%,
+      
+      rgb(6, 4, 17) 84%
+    );
+  animation: gradientAnimation 5s ease infinite;
+}
