@@ -5,7 +5,7 @@ import { useBehaviorAnalysis } from "./hooks/useBehaviorAnalysis";
 import { useBillaDebugger } from "./hooks/useBillaDebugger";
 import BillaCharacter from "./components/BillaCharacter";
 import BillaSpeechBubble from "./components/BillaSpeechBubble";
-
+import BillaProfile from "./components/BillaProfile";
 /**
  * BILLA - A passive observer, cynical side-character
  *
@@ -27,6 +27,7 @@ const Billa = () => {
   const [message, setMessage] = useState("");
   const [isVisible, setIsVisible] = useState(false);
   const [showBilla, setShowBilla] = useState(false);
+  const [showProfile, setShowProfile] = useState(false);
 
   // ======================================================
   // REFS - Behavioral State
@@ -608,7 +609,7 @@ const Billa = () => {
         >
           {/* Speech Bubble */}
           <AnimatePresence mode="wait">
-            {isVisible && (
+            {isVisible && !showProfile && (
               <BillaSpeechBubble message={message} />
             )}
           </AnimatePresence>
@@ -618,10 +619,13 @@ const Billa = () => {
             className="pointer-events-auto"
             onMouseEnter={handleBillaHover}
           >
-            <BillaCharacter />
+            <BillaCharacter onClick={() => setShowProfile(true)} />
           </div>
         </motion.div>
       )}
+
+      {/* Profile Modal */}
+      {showProfile && <BillaProfile onClose={() => setShowProfile(false)} />}
     </AnimatePresence>
   );
 };

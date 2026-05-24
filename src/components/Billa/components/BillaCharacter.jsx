@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
  * Idle animation is soft, not distracting.
  */
 
-const BillaCharacter = () => {
+const BillaCharacter = ({ onClick }) => {
   return (
     <motion.div
       animate={{
@@ -44,7 +44,8 @@ const BillaCharacter = () => {
           stiffness: 200,
           damping: 20,
         }}
-        className="cursor-default"
+        className="cursor-pointer"
+        onClick={onClick}
       >
         <img
           src="/billa.png"
